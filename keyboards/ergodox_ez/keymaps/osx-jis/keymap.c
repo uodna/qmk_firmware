@@ -7,6 +7,14 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
+#define JA_CLON KC_QUOT  // : and +
+#define JA_AT   KC_LBRC  // @ and `
+#define JA_HAT  KC_EQL   // ^ and ~
+#define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
+#define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
+#define JA_LBRC KC_RBRC  // [ and {
+#define JA_RBRC KC_BSLS  // ] and }
+
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -63,13 +71,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,---------------------------------------------------.           ,--------------------------------------------------.
  * |Version  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
  * |---------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
- * |         |   !  |   @  |   {  |   }  |   |  |      |           |      |   Up |   7  |   8  |   9  |   *  |   F12  |
+ * |         |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |   F12  |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  Reset  |   #  |   $  |   (  |   )  |   `  |------|           |------| Down |   4  |   5  |   6  |   +  |        |
+ * |  Reset  |   !  |   "  |   #  |   $  |   %  |------|           |------|   &  |   '  |   (  |   )  |   |  |        |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   &  |   1  |   2  |   3  |   \  |        |
+ * |         |      |   ^  |   [  |   ]  |   ~  |      |           |      |   =  |   -  |   {  |   }  |   \  |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | EPRM  |      |      |      |      |                                       |      |    . |   0  |   =  |      |
+ *   | EPRM  |      |      |      |      |                                       |      |      |      |      |      |
  *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |Animat|      |       |Toggle|Solid |
@@ -83,19 +91,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = LAYOUT_ergodox(
        // left hand
        VRSN,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS,
-       KC_TRNS,KC_EXLM,KC_AT,  KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
-       RESET,KC_HASH,KC_DLR, KC_LPRN,KC_RPRN,KC_GRV,
-       KC_TRNS,KC_PERC,KC_CIRC,KC_LBRC,KC_RBRC,KC_TILD,KC_TRNS,
+       KC_TRNS,KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_TRNS,
+       RESET,S(KC_1),S(KC_2), S(KC_3),S(KC_4),S(KC_5),
+       KC_TRNS,KC_TRNS,JA_HAT,JA_LBRC,JA_RBRC,S(JA_HAT),KC_TRNS,
           EPRM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
                                        RGB_MOD,KC_TRNS,
                                                KC_TRNS,
                                RGB_VAD,RGB_VAI,KC_TRNS,
        // right hand
-       KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_TRNS, KC_UP,   KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
-                KC_DOWN, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
-       KC_TRNS, KC_AMPR, KC_1,   KC_2,    KC_3,    KC_BSLS, KC_TRNS,
-                         KC_TRNS,KC_DOT,  KC_0,    KC_EQL,  KC_TRNS,
+       KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,     KC_F11,
+       KC_TRNS, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,       KC_F12,
+                S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_JYEN), KC_TRNS,
+       KC_TRNS, S(KC_MINS), KC_MINS, S(JA_LBRC),    S(JA_RBRC),    KC_JYEN, KC_TRNS,
+                         KC_TRNS,KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS,
        RGB_TOG, RGB_SLD,
        KC_TRNS,
        KC_TRNS, RGB_HUD, RGB_HUI
