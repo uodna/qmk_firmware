@@ -7,13 +7,16 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
-#define JA_CLON KC_QUOT  // : and +
+#define JA_CLON KC_QUOT  // : and *
 #define JA_AT   KC_LBRC  // @ and `
 #define JA_HAT  KC_EQL   // ^ and ~
 #define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
 #define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
 #define JA_LBRC KC_RBRC  // [ and {
 #define JA_RBRC KC_BSLS  // ] and }
+
+#define M_ZR_AST M(2)
+#define M_CLN_UN M(3)
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -26,21 +29,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   -    |
+ * |        |  1!  |  2"  |  3#  |  4$  |  5%  | LEFT |           | RIGHT|  6&  |  7'  |  8(  |  9)  |  0*  |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L2  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   @    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |  -=    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   :    |
- * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |   _    |
+ * |[{/LCtrl|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  ;+  |]}/RCtrl|
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /?  |  :_    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |Grv/L1|  '"  |AltShf| LAlt | LGui |                                       | RGui |   |  |   [  |   ]  |   Grv  |
+ *   |      |      |      | Esc  | Eisu |                                       | Kana |  \|  |      |      |      |
+ *   |      |      |      | /Alt | /LGui|                                       | /RGui|      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | BS   | LGui |       | Alt  |Ctrl/Esc|
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Del  |       | PgUp |        |      |
- *                                 | Space| Esc  |------|       |------|  Esc   |Enter |
+ *                                 | Space|  ^~  |------|       |------|   @`   |Enter |
  *                                 |      | /L1  | End  |       | PgDn |  /L1   |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -49,22 +53,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         KC_NO,     KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
-        KC_TAB,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(MDIA),
-        KC_LCTRL,      KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,       KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   ALL_T(KC_NO),
-        LT(SYMB,KC_GRV),KC_QUOT,     LALT(KC_LSFT),  KC_LALT,KC_LGUI,
+        KC_TAB,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_NO,
+        LCTL_T(JA_LBRC),      KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
+        KC_LSFT,       KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_NO,
+        KC_NO,KC_NO,     KC_NO,  LALT_T(KC_ESC),LGUI_T(KC_LANG2),
                                               KC_BSPACE,  KC_LGUI,
                                                               KC_DEL,
-                                              KC_SPC,LT(SYMB,KC_ESC),KC_END,
+                                              KC_SPC,LT(SYMB,JA_HAT),KC_END,
         // right hand
-             KC_RGHT,     KC_6,   KC_7,  KC_8,   KC_9,   KC_0,             KC_MINS,
-             TG(SYMB),    KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_LBRC,
-                          KC_H,   KC_J,  KC_K,   KC_L,   KC_SCLN,          KC_QUOT,
-             MEH_T(KC_NO),KC_N,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,          KC_RO,
-                                  KC_RGUI,KC_JYEN,KC_RBRC,KC_BSLS,        KC_EQL,
+             KC_RGHT,     KC_6,   KC_7,  KC_8,   KC_9,   M_ZR_AST,             KC_NO,
+             KC_NO,    KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_MINS,
+                          KC_H,   KC_J,  KC_K,   KC_L,   KC_SCLN,          RCTL_T(JA_RBRC),
+             KC_NO,KC_N,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,          M_CLN_UN,
+                                  RGUI_T(KC_LANG1),JA_ENVL,KC_NO,KC_NO,        KC_NO,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
-             KC_PGDN,LT(SYMB,KC_ESC), KC_ENT
+             KC_PGDN,LT(SYMB,JA_AT), KC_ENT
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -167,6 +171,38 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     case 1:
       if (record->event.pressed) { // For resetting EEPROM
         eeconfig_init();
+      }
+      break;
+    case 2:
+      if(record->event.pressed){
+        if(keyboard_report->mods & MOD_BIT(KC_LSFT)){
+          /* unregister_code(KC_LSFT); */
+          /* register_code(JA_CLON);      //On German layout # */
+          /* unregister_code(JA_CLON);      //On German layout # */
+          /* register_code(KC_LSFT);     //to keep shift pressed if held */
+          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
+        }
+        else{
+          /* register_code(KC_0); */
+          /* unregister_code(KC_0); */
+          return MACRO(T(0), END);
+        }
+      }
+      break;
+    case 3:
+      if(record->event.pressed){
+        if(keyboard_report->mods & MOD_BIT(KC_LSFT)){
+          /* unregister_code(KC_LSFT); */
+          /* register_code(JA_CLON);      //On German layout # */
+          /* unregister_code(JA_CLON);      //On German layout # */
+          /* register_code(KC_LSFT);     //to keep shift pressed if held */
+          return MACRO(T(RO), END);
+        }
+        else{
+          /* register_code(KC_0); */
+          /* unregister_code(KC_0); */
+          return MACRO(T(QUOT), END);
+        }
       }
       break;
   }
