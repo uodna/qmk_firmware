@@ -37,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /?  |  :_    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Esc  | Eisu |                                       | Kana |  \|  |      |      |      |
- *   |      |      |      | /Alt | /LGui|                                       | /RGui|      |      |      |      |
+ *   |      |      |      | Esc  | LGui |                                       | RGui |  \|  |      |      |      |
+ *   |      |      |      | /Alt |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | BS   | LGui |       | Alt  |Ctrl/Esc|
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   MDIA,
         LCTL_T(JA_LBRC),      KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,       KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_NO,
-        KC_NO,KC_NO,     KC_NO,  LALT_T(KC_ESC),LGUI_T(KC_LANG2),
+        KC_NO,KC_NO,     KC_NO,  LALT_T(KC_ESC),KC_LGUI,
                                               KC_BSPACE,  KC_LGUI,
                                                               KC_DEL,
                                               KC_SPC,LT(SYMB,JA_HAT),KC_END,
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              SYMB,    KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_MINS,
                           KC_H,   KC_J,  KC_K,   KC_L,   KC_SCLN,          RCTL_T(JA_RBRC),
              KC_NO,KC_N,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,          M_CLN_UN,
-                                  RGUI_T(KC_LANG1),JA_ENVL,KC_NO,KC_NO,        KC_NO,
+                                  KC_RGUI,JA_ENVL,KC_NO,KC_NO,        KC_NO,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
              KC_PGDN,LT(SYMB,JA_AT), KC_ENT
