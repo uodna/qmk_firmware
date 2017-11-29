@@ -37,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  [   |           |  ]   |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /?  |   _    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Esc  | LGui |                                       | RCtrl|  \|  |      |      |      |
- *   |      |      |      |/LAlt |      |                                       |      |      |      |      |      |
+ *   |      |      |      | Esc  | LGui |                                       | KP1  |  \|  |      |      |      |
+ *   |      |      |      |/LAlt |      |                                       | /L1  |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | BS   |  L2  |       |  L1  |Ctrl/Esc|
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              LSFT(JA_RBRC),    KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_MINS,
                           KC_H,   KC_J,  KC_K,   KC_L,   KC_SCLN,          JA_CLON,
              JA_RBRC,KC_N,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,          KC_RO,
-                                  KC_RCTL,JA_ENVL,KC_NO,KC_NO,        KC_NO,
+                                  LT(SYMB,KC_P1),JA_ENVL,KC_NO,KC_NO,        KC_NO,
              TG(SYMB),        CTL_T(KC_ESC),
              KC_PGUP,
              KC_PGDN,LT(SYMB,JA_AT), KC_ENT
