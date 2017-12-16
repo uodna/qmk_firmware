@@ -75,11 +75,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     --------------------------------------------------             --------------------------------------------------
    |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
    |-------- ------ ------ ------ ------ -------------|           |------ ------ ------ ------ ------ ------ --------|
-   |        |      |      |  UP  |      |      |      |           |      |      |   {  |  }   |  @   |  `   |        |
+   |        |      |  UP  |      |  {   |      |      |           |      |      |   }  |  @   |  `   |      |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
-   |        |      | LEFT | DOWN | RIGHT|      |------|           |------|  BS  |   [  |  ]   |  \   |  |   |        |
+   |        | LEFT | DOWN |RIGHT |  [   |      |------|           |------|  BS  |   ]  |  \   |  |   |  ~   |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
-   |        |      |      |      |      |      |      |           |      |      |      |      |  ^   |  ~   |        |
+   |        |      |      |      |      |      |      |           |      |      |      |      |  ^   |      |        |
     -------- ------ ------ ------ ------ -------------             ------------- ------ ------ ------ ------ --------
      |      |      |      |      |      |                                       |      |      |      |      |      |
      |      |      |      |      |      |                                       |      |      |      |      |      |
@@ -95,20 +95,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // SYMB
 [SYMB] = LAYOUT_ergodox(
        // left hand
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_UP  , KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_UP  , KC_TRNS, LSFT(JA_LBRC), KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, JA_LBRC,       KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
        // right hand
-       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, LSFT(JA_LBRC), LSFT(JA_RBRC),  JA_AT  , LSFT(JA_AT), KC_TRNS,
-                KC_BSPC, JA_LBRC,       JA_RBRC,        JA_ENVL, LSFT(JA_ENVL), KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,        JA_HAT , KC_TRNS, KC_TRNS,
-                         KC_TRNS,       KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,
+       KC_TRNS, KC_TRNS, LSFT(JA_RBRC), JA_AT  , LSFT(JA_AT),   KC_TRNS,      KC_TRNS,
+                KC_BSPC, JA_RBRC,       JA_ENVL, LSFT(JA_ENVL), LSFT(JA_HAT), KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, JA_HAT ,       KC_TRNS,      KC_TRNS,
+                         KC_TRNS,       KC_TRNS, KC_TRNS,       KC_TRNS,      KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
