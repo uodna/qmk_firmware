@@ -4,7 +4,7 @@
 #include "../../config.h"
 
 #undef  TAPPING_TERM
-#define TAPPING_TERM 150
+#define TAPPING_TERM 100
 
 #define PERMISSIVE_HOLD
 
