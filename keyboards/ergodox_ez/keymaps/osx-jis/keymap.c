@@ -75,11 +75,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     --------------------------------------------------             --------------------------------------------------
    |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
    |-------- ------ ------ ------ ------ -------------|           |------ ------ ------ ------ ------ ------ --------|
-   |        |      |      |  UP  |      |      |      |           |      |      |   ^  |  @   |      |      |        |
+   |        |      |      |  UP  |      |      |      |           |      |      |   {  |  }   |  @   |      |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
    |        |      | LEFT | DOWN | RIGHT|      |------|           |------|  BS  |   [  |  ]   |  \   |      |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
-   |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+   |        |      |      |      |      |      |      |           |      |      |      |      |  ^   |      |        |
     -------- ------ ------ ------ ------ -------------             ------------- ------ ------ ------ ------ --------
      |      |      |      |      |      |                                       |      |      |      |      |      |
      |      |      |      |      |      |                                       |      |      |      |      |      |
@@ -104,11 +104,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
        // right hand
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_TRNS, JA_HAT, JA_AT, KC_TRNS, KC_TRNS, KC_TRNS,
-                 KC_BSPACE, JA_LBRC, JA_RBRC, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, LSFT(JA_LBRC), LSFT(JA_RBRC),  JA_AT  , KC_TRNS, KC_TRNS,
+                KC_BSPC, JA_LBRC,       JA_RBRC,        JA_ENVL, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,        JA_HAT , KC_TRNS, KC_TRNS,
+                         KC_TRNS,       KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
