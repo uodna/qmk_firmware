@@ -15,9 +15,6 @@
 #define JA_LBRC KC_RBRC  // [ and {
 #define JA_RBRC KC_BSLS  // ] and }
 
-#define M_ZR_AST M(2)
-#define M_CLN_UN M(3)
-
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -174,38 +171,6 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         eeconfig_init();
       }
       break;
-    case 2:
-      if(record->event.pressed){
-        if(keyboard_report->mods & MOD_BIT(KC_LSFT)){
-          /* unregister_code(KC_LSFT); */
-          /* register_code(JA_CLON);      //On German layout # */
-          /* unregister_code(JA_CLON);      //On German layout # */
-          /* register_code(KC_LSFT);     //to keep shift pressed if held */
-          return MACRO(D(LSFT), T(QUOT), U(LSFT), END);
-        }
-        else{
-          /* register_code(KC_0); */
-          /* unregister_code(KC_0); */
-          return MACRO(T(0), END);
-        }
-      }
-      break;
-    case 3:
-      if(record->event.pressed){
-        if(keyboard_report->mods & MOD_BIT(KC_LSFT)){
-          /* unregister_code(KC_LSFT); */
-          /* register_code(JA_CLON);      //On German layout # */
-          /* unregister_code(JA_CLON);      //On German layout # */
-          /* register_code(KC_LSFT);     //to keep shift pressed if held */
-          return MACRO(T(RO), END);
-        }
-        else{
-          /* register_code(KC_0); */
-          /* unregister_code(KC_0); */
-          return MACRO(T(QUOT), END);
-        }
-      }
-      break;
   }
   return MACRO_NONE;
 };
@@ -264,5 +229,4 @@ void matrix_scan_user(void) {
       // none
       break;
   }
-
 };
