@@ -6,6 +6,8 @@
 #undef  TAPPING_TERM
 #define TAPPING_TERM 130
 
+#define RETRO_TAPPING
+
 #define PERMISSIVE_HOLD
 
 #undef  LED_BRIGHTNESS_DEFAULT
