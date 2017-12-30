@@ -7,6 +7,7 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
+// JIS Keycodes
 #define JA_CLON KC_QUOT  // : and *
 #define JA_AT   KC_LBRC  // @ and `
 #define JA_HAT  KC_EQL   // ^ and ~
@@ -14,6 +15,13 @@
 #define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
 #define JA_LBRC KC_RBRC  // [ and {
 #define JA_RBRC KC_BSLS  // ] and }
+
+// Shifted JIS Keycodes
+#define JA_ASTR KC_DQUO  // *
+#define JA_BQUO KC_LCBR  // `
+#define JA_TILD KC_PLUS  // ~
+#define JA_LCBR KC_RCBR  // {
+#define JA_RCBR KC_PIPE  // }
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -106,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_TRNS,  KC_TRNS,  KC_TRNS,
 
        // right hand
-       KC_TRNS,  KC_TRNS,  KC_TRNS,        KC_TRNS,        KC_TRNS,       KC_TRNS,      KC_TRNS,
-       KC_TRNS,  KC_TRNS,  LSFT(JA_LBRC),  LSFT(JA_RBRC),  JA_AT,         LSFT(JA_AT),  KC_TRNS,
-                 KC_BSPC,  JA_LBRC,        JA_RBRC,        JA_HAT,        KC_TRNS,      KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_TRNS,        KC_TRNS,        LSFT(JA_HAT),  KC_TRNS,      KC_TRNS,
-                           KC_TRNS,        KC_TRNS,        KC_TRNS,       KC_TRNS,      KC_TRNS,
+       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+       KC_TRNS,  KC_TRNS,  JA_LCBR,  JA_RCBR,  JA_AT,    JA_BQUO,  KC_TRNS,
+                 KC_BSPC,  JA_LBRC,  JA_RBRC,  JA_HAT,   KC_TRNS,  KC_TRNS,
+       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  JA_TILD,  KC_TRNS,  KC_TRNS,
+                           KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
 
        KC_TRNS,  KC_TRNS,
        KC_TRNS,
