@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | BS   |  L2  |       |  L1  |Ctrl/Esc|
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Del  |       | PgUp |        |      |
- *                                 | Space| Esc  |------|       |------|  Meh   |Enter |
+ *                                 | Space|      |------|       |------|  Meh   |Enter |
  *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                                                             KC_BSPC,  TG(MDIA),
                                                                       KC_DEL,
-                                                   KC_SPC,  KC_ESC,   KC_END,
+                                                   KC_SPC,  KC_NO,    KC_END,
 
         // right hand
         KC_RGHT,  KC_6,            KC_7,     KC_8,    KC_9,    KC_0,     KC_BSPC,
