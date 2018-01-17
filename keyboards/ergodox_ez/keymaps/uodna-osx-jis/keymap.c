@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    |-------- ------ ------ ------ ------ -------------|           |------ ------ ------ ------ ------ ------ --------|
    |        |      |      |  UP  |      |      |      |           |      |  `   |   {  |  }   |  @   |      |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
-   |        |      | LEFT | DOWN | RIGHT|      |------|           |------|  BS  |   [  |  ]   |  ^   |  ~   |        |
+   |        |      | LEFT | DOWN | RIGHT|      |------|           |------|  BS  |   [  |  ]   |  ~   |  ^   |        |
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
    |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
     -------- ------ ------ ------ ------ -------------             ------------- ------ ------ ------ ------ --------
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // right hand
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
        KC_TRNS,  JA_BQUO,  JA_LCBR,  JA_RCBR,  JA_AT,    KC_TRNS,  KC_TRNS,
-                 KC_BSPC,  JA_LBRC,  JA_RBRC,  JA_HAT,   JA_TILD,  KC_TRNS,
+                 KC_BSPC,  JA_LBRC,  JA_RBRC,  JA_TILD,  JA_HAT,   KC_TRNS,
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
                            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
 
