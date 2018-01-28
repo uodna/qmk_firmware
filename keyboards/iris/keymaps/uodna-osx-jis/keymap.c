@@ -24,6 +24,8 @@ enum custom_keycodes {
 #define KC_RST RESET
 #define KC_BL_S BL_STEP
 
+#define KC_LALT_T LALT_T
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = KC_KEYMAP(
@@ -34,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      LCTL, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, Z  , X  , C  , V  , B  ,SPC ,     ENT , N  , M  ,COMM,DOT ,SLSH, RO ,
+     LSFT, Z  , X  , C  , V  , B  ,SPC ,     KP_1, N  , M  ,COMM,DOT ,SLSH, RO ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,LGUI,SPC ,         ENT ,RASE,JYEN
+             LALT_T(KC_ESC),LGUI,SPC ,         ENT ,RASE,JYEN
   //                  `----+----+----'        `----+----+----'
   ),
 
