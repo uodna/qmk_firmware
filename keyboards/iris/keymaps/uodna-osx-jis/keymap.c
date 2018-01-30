@@ -25,6 +25,7 @@ enum custom_keycodes {
 #define KC_BL_S BL_STEP
 
 #define KC_LALT_T LALT_T
+#define KC_LT2 LT
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -38,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
      LSFT, Z  , X  , C  , V  , B  ,SPC ,     KP_1, N  , M  ,COMM,DOT ,SLSH, RO ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-             LALT_T(KC_ESC),LGUI,SPC ,         ENT ,RASE,JYEN
+             LALT_T(KC_ESC),LGUI,SPC ,         ENT ,LT2(_RAISE,KC_P1),JYEN
   //                  `----+----+----'        `----+----+----'
   ),
 
