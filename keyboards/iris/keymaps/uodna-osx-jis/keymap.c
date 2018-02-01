@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
      LSFT, Z  , X  , C  , V  , B  ,SPC ,     KP_1, N  , M  ,COMM,DOT ,SLSH, RO ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-             LALT_T(KC_ESC),LGUI,SPC ,         ENT ,LT2(_RAISE,KC_P1),JYEN
+             LALT_T(KC_ESC),LGUI,SPC ,         ENT ,LT2(_RAISE,KC_P1),LT2(_RAISE,KC_JYEN)
   //                  `----+----+----'        `----+----+----'
   ),
 
