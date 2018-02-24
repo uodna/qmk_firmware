@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |  L2  |       |  L1  |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 | Space|      |------|       |------|  Meh   |Enter |
+ *                                 | Space|      |------|       |------|  KP1   |Enter |
  *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         TG(SYMB),  KC_NO,
         KC_NO,
-        KC_NO,     KC_MEH,  KC_ENT
+        KC_NO,     KC_P1,  KC_ENT
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    |-------- ------ ------ ------ ------ ------|      |           |      |------ ------ ------ ------ ------ --------|
    |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
     -------- ------ ------ ------ ------ -------------             ------------- ------ ------ ------ ------ --------
-     |      |      |      |      | KP1  |                                       |      |      |      |      |      |
+     |      |      |      |      |      |                                       |      |      |      |      |      |
      |      |      |      |      |      |                                       |      |      |      |      |      |
       ----------------------------------                                         ----------------------------------
                                            -------------         -------------
@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_UP  ,  KC_TRNS,  KC_TRNS,  KC_TRNS,
        KC_TRNS,  KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_TRNS,
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_P1,
+       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
 
                                                          KC_TRNS,  KC_TRNS,
                                                                    KC_TRNS,
