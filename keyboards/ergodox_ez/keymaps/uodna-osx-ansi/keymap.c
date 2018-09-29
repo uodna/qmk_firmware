@@ -7,14 +7,6 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
-#define JA_CLON KC_QUOT  // : and +
-#define JA_AT   KC_LBRC  // @ and `
-#define JA_HAT  KC_EQL   // ^ and ~
-#define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
-#define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
-#define JA_LBRC KC_RBRC  // [ and {
-#define JA_RBRC KC_BSLS  // ] and }
-
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -62,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
         KC_NO,  KC_6,      KC_7,               KC_8,    KC_9,    KC_0,     KC_NO,
         KC_NO,  KC_Y,      KC_U,               KC_I,    KC_O,    KC_P,     KC_MINS,
-                KC_H,      KC_J,               KC_K,    KC_L,    KC_SCLN,  JA_CLON,
+                KC_H,      KC_J,               KC_K,    KC_L,    KC_SCLN,  KC_QUOT,
         KC_NO,  KC_N,      KC_M,               KC_COMM, KC_DOT,  KC_SLSH,  KC_EQL,
                 MO(SYMB),  LT(MDIA, KC_BSLS),  KC_NO,   KC_NO,   KC_NO,
 
