@@ -3,6 +3,30 @@ jobs:
   build:
     docker:
       - image: uodna/qmk_firmware:circleci
+    working_directory: ~/qmk_firmware
     steps:
       - checkout
       - run: make iris:uodna-osx-ansi
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/qmk_firmware
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 cp .build/iris_rev2_uodna-osx-ansi.hex s3://uodna0-prod1-qmk/iris_rev2_uodna-osx-ansi/
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: circleci
