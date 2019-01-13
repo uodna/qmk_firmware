@@ -12,6 +12,7 @@ jobs:
       - image: circleci/python:2.7-jessie
     working_directory: ~/qmk_firmware
     steps:
+      - run: ls -la
       - run:
           name: Install awscli
           command: sudo pip install awscli
