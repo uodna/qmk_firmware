@@ -1,10 +1,18 @@
 version: 2
+
+references:
+  workspace_root: &workspace_root
+    /tmp/workspace
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
 jobs:
   build:
     docker:
       - image: uodna/qmk_firmware:circleci
-    working_directory: /tmp/qmk_firmware
     steps:
+      - *attach_workspace
       - checkout
       - run: make iris:uodna-osx-ansi
       - run: pwd
@@ -13,8 +21,8 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: /tmp/qmk_firmware
     steps:
+      - *attach_workspace
       - run: pwd
       - run: ls -la
       - run: ls -la /tmp/qmk_firmware
