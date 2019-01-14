@@ -29,7 +29,6 @@ jobs:
       - image: circleci/python:2.7-jessie
     steps:
       - attach_workspace:
-          at: ./build
       - run: pwd
       - run: ls -la
       - run: ls -la build
