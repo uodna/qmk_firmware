@@ -15,11 +15,7 @@ jobs:
       - *attach_workspace
       - checkout
       - run: make iris:uodna-osx-ansi
-      - run: pwd
-      - run: ls -la
-      - run: ls -la .build
       - run: mv .build /tmp/workspace/build
-      - run: ls -la /tmp/workspace/build
       - persist_to_workspace:
           root: *workspace_root
           paths:
@@ -30,9 +26,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: pwd
-      - run: ls -la
-      - run: ls -la build
       - run:
           name: Install awscli
           command: sudo pip install awscli
