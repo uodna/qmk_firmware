@@ -3,14 +3,14 @@ jobs:
   build:
     docker:
       - image: uodna/qmk_firmware:circleci
-    working_directory: ~/qmk_firmware
+    working_directory: /qmk_firmware
     steps:
       - checkout
       - run: make iris:uodna-osx-ansi
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/qmk_firmware
+    working_directory: /qmk_firmware
     steps:
       - run: ls -la
       - run:
