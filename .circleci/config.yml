@@ -17,7 +17,6 @@ jobs:
       - run: make iris:uodna-osx-ansi
       - run: pwd
       - run: ls -la
-      - run: ls -la *workspace_root
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
@@ -25,7 +24,6 @@ jobs:
       - *attach_workspace
       - run: pwd
       - run: ls -la
-      - run: ls -la *workspace_root
       - run:
           name: Install awscli
           command: sudo pip install awscli
