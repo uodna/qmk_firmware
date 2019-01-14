@@ -27,6 +27,7 @@ jobs:
           at: ./build
       - run: pwd
       - run: ls -la
+      - run: ls -la build
       - run:
           name: Install awscli
           command: sudo pip install awscli
