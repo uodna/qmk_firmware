@@ -18,11 +18,13 @@ jobs:
       - run: pwd
       - run: ls -la
       - run: ls -la .build
+      - run: mv .build /tmp/workspace/build
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
     steps:
-      - *attach_workspace
+      - attach_workspace:
+          at: ./build
       - run: pwd
       - run: ls -la
       - run:
@@ -30,7 +32,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 cp iris_rev2_uodna-osx-ansi.hex s3://uodna0-prod1-qmk/iris_rev2_uodna-osx-ansi/
+          command: aws s3 cp -r build/*.hex s3://uodna0-prod1-qmk/iris_rev2_uodna-osx-ansi/
 
 workflows:
   version: 2
