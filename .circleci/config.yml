@@ -3,16 +3,21 @@ jobs:
   build:
     docker:
       - image: uodna/qmk_firmware:circleci
-    working_directory: /qmk_firmware
+    working_directory: /tmp/qmk_firmware
     steps:
       - checkout
       - run: make iris:uodna-osx-ansi
+      - run: pwd
+      - run: ls -la
+      - run: ls -la /tmp/qmk_firmware
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: /qmk_firmware
+    working_directory: /tmp/qmk_firmware
     steps:
+      - run: pwd
       - run: ls -la
+      - run: ls -la /tmp/qmk_firmware
       - run:
           name: Install awscli
           command: sudo pip install awscli
