@@ -19,6 +19,7 @@ jobs:
       - run: ls -la
       - run: ls -la .build
       - run: mv .build /tmp/workspace/build
+      - run: ls -la /tmp/workspace/build
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
