@@ -42,7 +42,6 @@ enum macro_keycodes {
 #define KC_ KC_TRNS
 #define KC_LOWER LOWER
 #define KC_RAISE RAISE
-#define KC_RST   RESET
 #define KC_LRST  RGBRST
 #define KC_LTOG  RGB_TOG
 #define KC_LHUI  RGB_HUI
@@ -91,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
            ,      ,      ,      ,      ,      ,                       ,      ,      ,      ,      ,      ,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                       ,      ,      ,      RST,      ,       \
+                                       ,      ,      ,         ,      ,       \
                               //`--------------------'  `--------------------'
   ),
 
