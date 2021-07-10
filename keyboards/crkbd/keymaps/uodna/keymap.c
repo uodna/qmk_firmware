@@ -248,3 +248,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case RGUI_T(KC_INT5):
+            return 2000;
+        default:
+            return TAPPING_TERM;
+    }
+}
