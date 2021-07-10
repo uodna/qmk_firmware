@@ -15,7 +15,6 @@ jobs:
       - *attach_workspace
       - run: apt update && apt-get install -y ssh
       - checkout
-      - run: make iris:uodna-osx-ansi
       - run: make crkbd:uodna
       - run: mv .build /tmp/workspace/build
       - persist_to_workspace:
