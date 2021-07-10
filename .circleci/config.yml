@@ -10,7 +10,7 @@ references:
 jobs:
   build:
     docker:
-      - image: uodna/qmk_firmware:circleci
+      - image: qmkfm/qmk_firmware
     steps:
       - *attach_workspace
       - checkout
