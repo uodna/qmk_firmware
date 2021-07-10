@@ -54,8 +54,8 @@ enum macro_keycodes {
 #define KC_LSMOD RGB_SMOD
 #define KC_CTLTB CTL_T(KC_TAB)
 #define KC_ALTESC ALT_T(KC_ESC)
-#define KC_RGUIEI RGUI_T(KC_LANG2)
-#define KC_RASEKN LT(_RAISE, KC_LANG1)
+#define KC_RGUIEI RGUI_T(KC_INT5)
+#define KC_RASEKN LT(_RAISE, KC_INT4)
 #define KC_LWRBSL LT(_LOWER, KC_BSLS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
