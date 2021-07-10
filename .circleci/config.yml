@@ -24,13 +24,10 @@ jobs:
             - build
   deploy:
     docker:
-      - image: circleci/python:2.7-jessie
+      - image: amazon/aws-cli
     steps:
       - attach_workspace:
           at: .
-      - run:
-          name: Install awscli
-          command: sudo pip install awscli
       - run:
           name: Deploy to S3
           command: |
@@ -41,8 +38,6 @@ jobs:
             export AWS_ACCESS_KEY_ID=$(echo $temp_role | jq .Credentials.AccessKeyId | xargs)
             export AWS_SECRET_ACCESS_KEY=$(echo $temp_role | jq .Credentials.SecretAccessKey | xargs)
             export AWS_SESSION_TOKEN=$(echo $temp_role | jq .Credentials.SessionToken | xargs)
-            env
-            ls -l build/
             aws s3 cp build/*.hex s3://uodna0-prod1-qmk/
 
 workflows:
