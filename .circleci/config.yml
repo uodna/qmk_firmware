@@ -13,6 +13,7 @@ jobs:
       - image: qmkfm/qmk_firmware
     steps:
       - *attach_workspace
+      - run: apt update && apt-get install -y ssh
       - checkout
       - run: make iris:uodna-osx-ansi
       - run: make crkbd:uodna
